@@ -1,7 +1,7 @@
 from random import randint
 from state import State
 
-class RandomPlan:
+class BuscaCega:
     def __init__(self, maxRows, maxColumns, goal, initialState, name = "none", mesh = "square"):
         """
         Define as variaveis necessárias para a utilização do random plan por um unico agente.

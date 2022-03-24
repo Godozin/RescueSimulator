@@ -1,3 +1,4 @@
+from distutils.command.config import config
 import sys
 import os
 import time
@@ -5,7 +6,7 @@ import time
 ## Importa as classes que serao usadas
 sys.path.append('pkg')
 from model import Model
-from agentRnd import AgentRnd
+from agentVasc import AgentVasc
 
 
 ## Metodo utilizado para permitir que o usuario construa o labirindo clicando em cima
@@ -52,13 +53,13 @@ def main():
     model.draw()
 
     # Cria um agente
-    agent = AgentRnd(model)
+    agent = AgentVasc(model, configDict)
 
     ## Ciclo de raciocínio do agente
     agent.deliberate()
     while agent.deliberate() != -1:
         model.draw()
-        time.sleep(0.3) # para dar tempo de visualizar as movimentacoes do agente no labirinto
+        time.sleep(0.1) # para dar tempo de visualizar as movimentacoes do agente no labirinto
     model.draw()    
         
 if __name__ == '__main__':
